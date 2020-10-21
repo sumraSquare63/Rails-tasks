@@ -27,7 +27,13 @@ sol: rails generate model PhoneNumber number:integer country:inetger isMobile:bo
   
 Task 3
 Create many-to-many relationships for `Users` model with `PhoneNumbers` model
-
+class User < ApplicationRecord
+  has_and_belongs_to_many :phone_numbers
+end
+  
+class PhoneNumber < ApplicationRecord
+  has_and_belongs_to_many :users
+end
   
   task 4
   Create CRUD for Users
